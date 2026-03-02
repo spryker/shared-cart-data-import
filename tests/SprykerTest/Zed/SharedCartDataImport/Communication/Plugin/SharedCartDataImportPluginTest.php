@@ -62,9 +62,6 @@ class SharedCartDataImportPluginTest extends Unit
      */
     protected $quoteTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -110,9 +107,6 @@ class SharedCartDataImportPluginTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -121,9 +115,6 @@ class SharedCartDataImportPluginTest extends Unit
         $this->tester->deleteCompanyUser($this->companyUser);
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->tester->ensureDatabaseTableIsEmpty();
@@ -146,9 +137,6 @@ class SharedCartDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTablesContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenCompanyUserNotFound(): void
     {
         $this->tester->ensureDatabaseTableIsEmpty();
@@ -171,9 +159,6 @@ class SharedCartDataImportPluginTest extends Unit
         $sharedCartDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenQuoteNotFound(): void
     {
         $this->tester->ensureDatabaseTableIsEmpty();
@@ -196,9 +181,6 @@ class SharedCartDataImportPluginTest extends Unit
         $sharedCartDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenPermissionGroupNotFound(): void
     {
         $this->tester->ensureDatabaseTableIsEmpty();
@@ -221,9 +203,6 @@ class SharedCartDataImportPluginTest extends Unit
         $sharedCartDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Act

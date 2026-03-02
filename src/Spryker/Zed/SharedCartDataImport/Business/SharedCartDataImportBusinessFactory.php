@@ -22,9 +22,6 @@ use Spryker\Zed\SharedCartDataImport\Business\SharedCartImportStep\SharedCartWri
  */
 class SharedCartDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function createSharedCartDataImport(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig(
@@ -43,25 +40,16 @@ class SharedCartDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createQuoteKeyToIdQuoteStep(): DataImportStepInterface
     {
         return new QuoteKeyToIdQuoteStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCompanyUserKeyToIdCompanyUserStep(): DataImportStepInterface
     {
         return new CompanyUserKeyToIdCompanyUserStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createQuotePermissionGroupNameToIdQuotePermissionGroupStep(): DataImportStepInterface
     {
         return new QuotePermissionGroupNameToIdQuotePermissionGroupStep();

@@ -14,11 +14,6 @@ use Spryker\Zed\SharedCartDataImport\Business\DataSet\SharedCartDataSetInterface
 
 class SharedCartWriterStep implements DataImportStepInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $quoteCompanyUserEntity = SpyQuoteCompanyUserQuery::create()

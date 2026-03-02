@@ -32,31 +32,16 @@ class SharedCartDataImportCommunicationTester extends Actor
 {
     use _generated\SharedCartDataImportCommunicationTesterActions;
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function deleteQuote(QuoteTransfer $quoteTransfer): void
     {
         $this->getLocator()->quote()->facade()->deleteQuote($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return void
-     */
     public function deleteCompanyUser(CompanyUserTransfer $companyUserTransfer): void
     {
         $this->getLocator()->companyUser()->facade()->delete($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function createCompanyUser(CustomerTransfer $customerTransfer): CompanyUserTransfer
     {
         $companyTransfer = $this->createCompany();
@@ -72,9 +57,6 @@ class SharedCartDataImportCommunicationTester extends Actor
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyTransfer
-     */
     public function createCompany(): CompanyTransfer
     {
         return $this->haveCompany(
@@ -87,11 +69,6 @@ class SharedCartDataImportCommunicationTester extends Actor
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     public function createCompanyBusinessUnit(CompanyTransfer $companyTransfer): CompanyBusinessUnitTransfer
     {
         return $this->haveCompanyBusinessUnit(
