@@ -107,14 +107,6 @@ class SharedCartDataImportPluginTest extends Unit
         ]);
     }
 
-    protected function tearDown(): void
-    {
-        parent::tearDown();
-
-        $this->tester->deleteQuote($this->quoteTransfer);
-        $this->tester->deleteCompanyUser($this->companyUser);
-    }
-
     public function testImportImportsData(): void
     {
         $this->tester->ensureDatabaseTableIsEmpty();
