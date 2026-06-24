@@ -13,6 +13,8 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class SharedCartDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_SHARED_CART = 'shared-cart';
